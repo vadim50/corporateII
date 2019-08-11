@@ -1,22 +1,12 @@
-  <div class="menu classic">
+@if($menu)
+ <div class="menu classic">
+    <ul id="nav" class="menu">
+        @include(env('THEME').'.customMenuItems',['items'=>$menu->roots()])
+    </ul>
+ </div>
+@endif
+  <!-- <div class="menu classic">
                             <ul id="nav" class="menu">
-                                
-                                <li>
-                                    <a href="index.html">HOME</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="home-ii.html">Home II</a></li>
-                                        <li><a href="home-iii.html">Home III</a></li>
-                                        <li><a href="home-iv.html">Home IV</a></li>
-                                        <li><a href="home-v.html">Home V</a></li>
-                                        <li><a href="home-vi.html">Home VI</a></li>
-                                        <li><a href="home-vii.html">Home VII</a></li>
-                                        <li><a href="home-viii.html">Home VIII</a></li>
-                                        <li><a href="home-ix.html">Home IX</a></li>
-                                        <li><a href="home-x.html">Home X</a></li>
-                                        <li><a href="landing-page.html">Landing page</a></li>
-                                    </ul>
-                                </li>
-                                
                                 <li>
                                     <a href="#">SLIDERS</a>
                                     <ul class="sub-menu">
@@ -88,4 +78,4 @@
                                 </li>
                                 
                             </ul>
-                        </div>
+                        </div> -->

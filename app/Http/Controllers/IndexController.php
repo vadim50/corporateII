@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Corp\Repositories\SlidersRepository;
 use Corp\Repositories\PortfoliosRepository;
 use Config;
+use DB;
+use Corp\Portfolio;
 
 class IndexController extends SiteController
 {
@@ -31,12 +33,18 @@ class IndexController extends SiteController
     public function index()
     {
         //
-
+        $lastPortfolios = Portfolio::latest()->first();
+        $lastPortfolios->img = json_decode($lastPortfolios->img);
         $portfolios = $this->getPortfolio();
+        // $lastPortfolios = DB::table('portfolios')
+        //         ->latest()
+        //         ->first();
+        
 
         //dd($portfolio);
+        //dd($lastPortfolios);
 
-        $content = view(env('THEME').'.content')->with('portfolios',$portfolios)->render();
+        $content = view(env('THEME').'.content')->with(['portfolios'=>$portfolios,'lastPortfolios'=>$lastPortfolios])->render();
 
         $this->vars = array_add($this->vars,'content',$content);
 

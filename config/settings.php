@@ -3,7 +3,8 @@
 return [
 
 	'slider_path'=>'slider-cycle',
-	'home_port_count'=>false
+	'home_port_count'=>false,
+	'home_articles_count'=>3
 
 ];
 

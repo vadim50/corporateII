@@ -3,7 +3,7 @@
 <div id="content-home" class="content group">
     <div class="hentry group">
         <div class="section portfolio">
- <h3 class="title">Latest projects</h3>
+ <h3 class="title">{{ __('ru.latest_projects') }}</h3>
 
 <div class="portfolio-projects">
 @if($lastPortfolios)

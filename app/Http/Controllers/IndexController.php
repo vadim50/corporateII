@@ -58,6 +58,10 @@ class IndexController extends SiteController
 
         $this->vars =  array_add($this->vars,'sliders',$sliders);
 
+        $this->keywords = 'Home page';
+        $this->meta_desc = 'Home page';
+        $this->title = 'Home page';
+
         $articles = $this->getArticles();
         
         

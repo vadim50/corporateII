@@ -128,6 +128,7 @@ class ArticlesController extends SiteController
             # code...
             $article->img = json_decode($article->img);
         }
+        //dd($article->comments->groupBy('parent_id'));
 
         $content = view(env('THEME').'.article_content')
         ->with('article',$article)

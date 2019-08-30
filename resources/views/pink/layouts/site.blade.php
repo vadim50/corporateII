@@ -127,6 +127,10 @@
                 
                 <!-- START SLIDER -->
 @yield('slider')
+
+<div class="wrap_result">
+    
+</div>
 				
 				<!-- START PRIMARY -->
 				<div id="primary" class="sidebar-{{ isset($bar) ? $bar : 'no' }}">
@@ -153,7 +157,8 @@
         
         <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.custom.js"></script>
         <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/contact.js"></script>
-        <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.mobilemenu.js"></script> 
+        <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.mobilemenu.js"></script>
+        <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/myscripts.js"></script>  
         
     </body>
     <!-- END BODY -->

@@ -1,3 +1,4 @@
+
 <li id="li-comment-{{ $data['id'] }}" class="comment even borGreen">
 	<div id="comment-{{ $data['id'] }}" class="comment-container">
 		<div class="comment-author vcard">
@@ -15,3 +16,4 @@
 		</div>
 	</div>
 </li>
+<hr>

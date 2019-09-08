@@ -38,8 +38,8 @@ class PortfolioController extends SiteController
         return $this->renderOutput();
     }
 
-    public function getPortfolios(){
-    	$portfolios = $this->p_rep->get('*',false,true);
+    public function getPortfolios($take=false,$paginate=true){
+    	$portfolios = $this->p_rep->get('*',$take,$paginate);
 
     	//dd($portfolios);
     	if($portfolios){
@@ -48,4 +48,32 @@ class PortfolioController extends SiteController
 
     	return $portfolios;
     }
+
+        public function show($alias)
+    {
+       
+    	$portfolio = $this->p_rep->one($alias);
+    	//dd($portfolio);
+
+    	if($portfolio && $portfolio->img){
+    		$portfolio->img = json_decode($portfolio->img);
+    	}
+
+
+        $this->title = $portfolio->title;
+        $this->keywords = $portfolio->keywords;
+        $this->meta_desc = $portfolio->meta_desc;
+        $portfolios = $this->getPortfolios(config('settings.other_portfolios'),false);
+
+        $content = view(env('THEME').'.portfolio_one_pidar')
+        ->with(['portfolio'=>$portfolio,'portfolios'=>$portfolios])
+        ->render();
+
+        $this->vars = array_add($this->vars,'content',$content);
+        
+        //dd($portfolios);
+
+        return $this->renderOutput();
+    }
+
 }

@@ -42,6 +42,9 @@ Route::resource('articles','ArticlesController',[
 
 ]);
 
-Route::get('articles/cat/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'articlesCat']);
+Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
+
+Route::get('articles/cat/{cat_alias?}',['uses'=>'ArticlesController@index','as'=>'articlesCat'])
+->where('cat_alias','[\w-]');
 
 Route::resource('comment','CommentController',['only'=>['store']]);

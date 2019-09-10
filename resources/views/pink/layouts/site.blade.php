@@ -102,7 +102,7 @@
                         
                         <!-- START LOGO -->
                         <div id="logo" class="group">
-                            <a href="index.html" title="Pink Rio">
+                            <a href="{{ route('home') }}" title="Pink Rio">
                                 <img src="{{ asset(env('THEME')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
                         </div>
                         <!-- END LOGO -->
@@ -143,7 +143,18 @@
             </div>
         </div>
         <!-- END PAGE META -->
-@endif				
+@endif
+
+@if(Route::currentRouteName() == 'contacts')
+        <!-- START PAGE META -->
+        <div id="page-meta">
+        <div class="inner group">
+        <h3>...Say Hello! :)</h3>
+        <h4>Get in touch with Pink Rio team</h4>
+        </div>
+        </div>
+        <!-- END PAGE META -->
+@endif              			
 				<!-- START PRIMARY -->
 				<div id="primary" class="sidebar-{{ isset($bar) ? $bar : 'no' }}">
 				    <div class="inner group">

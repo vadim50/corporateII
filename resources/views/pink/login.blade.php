@@ -15,7 +15,7 @@
 				                                <span class="label">Name</span>
 				                                <br />					<span class="sublabel">This is the name</span><br />
 				                                </label>
-				                                <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="login" id="name-contact-us" class="required" value="" /></div>
+				                                <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input type="text" name="email" id="name-contact-us" class="required" value="" /></div>
 				                                <div class="msg-error"></div>
 				                            </li>
 				                            <li class="text-field">

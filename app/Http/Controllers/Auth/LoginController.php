@@ -25,6 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+    protected $loginView;
     protected $redirectTo = '/admin';
 
     /**
@@ -35,5 +36,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->loginView = env('THEME').'.login';
     }
 }
